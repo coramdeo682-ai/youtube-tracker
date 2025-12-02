@@ -36,6 +36,7 @@ def save_data(row_data):
     client = init_connection()
     sheet = client.open("Youtube_Data_Store").sheet1
     sheet.append_row(row_data)
+    st.cache_resource.clear()
 
 # --- 3. 검색 엔진 (TF-IDF) ---
 def search_documents(query, df, top_k=3):
